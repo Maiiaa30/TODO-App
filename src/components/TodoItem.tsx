@@ -14,22 +14,23 @@ export const TodoItem = ({
   OnComplete,
 }: ITodoItemProps) => {
   return (
-    <li className="pt-2 list-disc ml-5" key={id}>
+    <li className="pt-2 list-disc flex items-center justify-between" key={id}>
       {label}
       {complete ? " | Concluido" : ""}
-
-      <button
-        className="ml-2 p-1.5 text-center bg-green-600 rounded-md cursor-pointer hover:bg-green-700"
-        onClick={OnComplete}
-      >
-        Concluir
-      </button>
-      <button
-        className="ml-2 p-1.5 text-center bg-red-600 rounded-md hover:bg-red-700 text-white"
-        onClick={OnRemove}
-      >
-        Remover
-      </button>
+      <div className="flex gap-2">
+        <button
+          className="ml-2 px-3 flex gap-2 py-1.5 rounded-md bg-green-600 hover:bg-green-500 text-white text-sm transition"
+          onClick={OnComplete}
+        >
+          Concluir
+        </button>
+        <button
+          className="ml-2 px-3 py-1.5 rounded-md bg-red-600 hover:bg-red-500 text-white text-sm transition"
+          onClick={OnRemove}
+        >
+          Remover
+        </button>
+      </div>
     </li>
   );
 };

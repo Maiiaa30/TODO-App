@@ -3,17 +3,17 @@ import "../../../../App.css";
 
 export const AppLayout = ({ children }: React.PropsWithChildren) => {
   return (
-    <div className="h-full flex flex-col bg-gray-800 shadow-[0_2px_6px_#0000001a] min-h-screen">
-      <div className="flex items-center justify-center gap-4 p-5 placeholder-white bg-gray-700">
-        <a className="bg-blue-500 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 p-2.5 rounded-md text-white">
+    <div className="h-full min-h-screen flex flex-col items-center bg-slate-900 shadow-[0_2px_6px_#0000001a]">
+      <div className="flex items-center justify-center gap-4 p-5 placeholder-white text-[#38bdf8] font-medium ">
+        <a className=" bg-slate-900 hover:text-white delay-150 duration-300 ease-in-out transition px-4 py-2 rounded-md text-[#38bdf8] border-1 border-black cursor-pointer">
           Pagina Inicial
         </a>
-        <a className="bg-blue-500 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 p-2.5 rounded-md text-white pointer-events-auto">
+        <a className=" bg-slate-900 hover:text-white delay-150 duration-300 ease-in-out transition px-4 py-2 rounded-md text-[#38bdf8] border-1 border-black cursor-pointer">
           Users
         </a>
       </div>
 
-      <hr className="border-white" />
+      {/* <hr className="border-white" /> */}
 
       {children}
     </div>
