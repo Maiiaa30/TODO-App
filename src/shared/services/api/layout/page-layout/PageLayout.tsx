@@ -8,14 +8,14 @@ interface IPageLayoutProps {
 
 export const PageLayout = ({ children, title }: IPageLayoutProps) => {
   return (
-    <div className="flex justify-center mt-0 text-white p-6 w-full">
-      <div className="w-full max-w-lg bg-slate-800 border-1 border-black p-4 rounded-md">
-        <div className="flex items-center justify-between">
-          <h1 className="text-2xl font-semibold mt-0 mb-2">{title}</h1>
+    <div className="w-full min-w-xl max-w-lg bg-slate-800 rounded-xl shadow-2xl overflow-hidden border border-slate-700 p-10">
+      <div className="p-6">
+        <div className="text-center mb-6">
+          <h1 className="text-2xl font-bold text-white">{title}</h1>
         </div>
-
-        <div>{children}</div>
       </div>
+
+      <div className="space-y-4">{children}</div>
     </div>
   );
 };
