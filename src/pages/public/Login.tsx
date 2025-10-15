@@ -1,4 +1,16 @@
+import { useState } from "react";
+import { useAuthContext } from "../../shared/services/api/contexts/AuthContext";
+
 export const Login = () => {
+  const { login } = useAuthContext();
+
+  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
+
+  const handleLogin = () => {
+    login(email, password);
+  };
+
   return (
     <div className="min-h-screen flex items-center justify-center p-4 bg-gradient-to-br from-slate-900 to-slate-950">
       <div className="w-full max-w-md bg-slate-800 rounded-xl shadow-2xl overflow-hidden border border-slate-700">
@@ -37,6 +49,8 @@ export const Login = () => {
                 <input
                   type="email"
                   id="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   placeholder="your@email.com"
                   required
                   className="w-full pl-10 pr-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-slate-500 focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition-all duration-200"
@@ -72,6 +86,8 @@ export const Login = () => {
                   type="password"
                   id="password"
                   placeholder="••••••••"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                   required
                   className="w-full pl-10 pr-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-slate-500 focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition-all duration-200"
                 />
@@ -80,6 +96,7 @@ export const Login = () => {
 
             {/* Submit Button */}
             <button
+              onClick={handleLogin}
               type="submit"
               className="w-full py-3 px-4 rounded-lg font-semibold text-slate-900 bg-gradient-to-r from-cyan-400 to-cyan-500 hover:from-cyan-300 hover:to-cyan-400 focus:ring-4 focus:ring-cyan-500/20 shadow-lg transition-all duration-200 transform hover:scale-[1.02]"
             >
